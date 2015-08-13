@@ -33,12 +33,11 @@
 
     <Spinner
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
+        android:layout_height="50dp"
         android:id="@+id/spinner"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="64dp" />
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:background="#8cffffff" />
 
 </RelativeLayout>
