@@ -30,4 +30,15 @@
         android:layout_alignParentEnd="true"
         android:src="@mipmap/male"
         android:background="#00ffffff" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:id="@+id/spinner"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp" />
+
 </RelativeLayout>

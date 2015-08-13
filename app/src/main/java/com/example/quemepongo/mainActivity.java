@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
 
-public class mainActivity extends ActionBarActivity {
+public class mainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
 
 
 
@@ -20,6 +23,12 @@ public class mainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         ImageButton female  = (ImageButton) findViewById(R.id.female);
         ImageButton male  = (ImageButton) findViewById(R.id.male);
+
+        Spinner dropdown = (Spinner)findViewById(R.id.spinner);
+        String[] items = new String[]{"1", "2", "three"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
+        dropdown.setAdapter(adapter);
+
 
         female.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,5 +74,16 @@ public class mainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
