@@ -9,5 +9,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="genero">Genero</string>
 
+    <string-array name="provincias">
+        <item>Córdoba</item>
+        <item>Buenos Aires</item>
+    </string-array>
+
 
 </resources>

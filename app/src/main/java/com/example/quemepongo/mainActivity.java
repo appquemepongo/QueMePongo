@@ -13,14 +13,15 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-
-public class mainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
-
-
-    public Integer num_ciu = 0;
+import static android.widget.Toast.LENGTH_LONG;
 
 
-    
+public class mainActivity extends ActionBarActivity {
+
+
+    Spinner spinner;
+    ArrayAdapter<CharSequence> adapter;
+    public String op_sel = new String();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +30,30 @@ public class mainActivity extends ActionBarActivity implements AdapterView.OnIte
         ImageButton female  = (ImageButton) findViewById(R.id.female);
         ImageButton male  = (ImageButton) findViewById(R.id.male);
 
+        spinner = (Spinner)findViewById(R.id.spinner);
+        adapter = ArrayAdapter.createFromResource(this,R.array.provincias,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
-        Spinner dropdown = (Spinner)findViewById(R.id.spinner);
-        String[] items = new String[]{"Córdoba", "Buenos Aires"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
-        dropdown.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                op_sel = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         female.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                 intent.putExtra("gender", "femenino");
-                intent.putExtra("city",num_ciu);
+                intent.putExtra("city", op_sel);
                 startActivity(intent);
             }
         });
@@ -50,9 +62,10 @@ public class mainActivity extends ActionBarActivity implements AdapterView.OnIte
             @Override
             public void onClick(View v) {
 
+
                 Intent intent = new Intent(getApplicationContext(),Main2Activity.class);
                 intent.putExtra("gender","masculino");
-                intent.putExtra("city",num_ciu);
+                intent.putExtra("city", op_sel);
                 startActivity(intent);
 
 
@@ -61,7 +74,6 @@ public class mainActivity extends ActionBarActivity implements AdapterView.OnIte
 
 
     }
-
 
 
     @Override
@@ -87,19 +99,5 @@ public class mainActivity extends ActionBarActivity implements AdapterView.OnIte
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        switch (position) {
-            case 0:
-                num_ciu = 1;
-                break;
-            case 1:
-                num_ciu = 2;
-                break;}
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        Toast.makeText(this,"Elija una opcion",Toast.LENGTH_LONG).show();
-    }
 }
