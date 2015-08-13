@@ -15,12 +15,14 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         TextView textView = (TextView) findViewById(R.id.textView);
-
         Intent intent = getIntent();
-
         String genero = intent.getStringExtra("gender");
         textView.setText(genero);
 
+        TextView textView2 = (TextView) findViewById(R.id.textView2);
+        //intent = getIntent();
+        Integer numero = intent.getIntExtra("city", 0);
+        textView2.setText(numero);
 
 
     }

@@ -11,11 +11,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class mainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
 
 
+    public Integer num_ciu = 0;
+
+
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +29,9 @@ public class mainActivity extends ActionBarActivity implements AdapterView.OnIte
         ImageButton female  = (ImageButton) findViewById(R.id.female);
         ImageButton male  = (ImageButton) findViewById(R.id.male);
 
+
         Spinner dropdown = (Spinner)findViewById(R.id.spinner);
-        String[] items = new String[]{"1", "2", "three"};
+        String[] items = new String[]{"Córdoba", "Buenos Aires"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
         dropdown.setAdapter(adapter);
 
@@ -34,7 +40,8 @@ public class mainActivity extends ActionBarActivity implements AdapterView.OnIte
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
-                intent.putExtra("gender","femenino");
+                intent.putExtra("gender", "femenino");
+                intent.putExtra("city",num_ciu);
                 startActivity(intent);
             }
         });
@@ -44,8 +51,11 @@ public class mainActivity extends ActionBarActivity implements AdapterView.OnIte
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(),Main2Activity.class);
-                intent.putExtra("gender", "masculino");
+                intent.putExtra("gender","masculino");
+                intent.putExtra("city",num_ciu);
                 startActivity(intent);
+
+
             }
         });
 
@@ -79,11 +89,17 @@ public class mainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+        switch (position) {
+            case 0:
+                num_ciu = 1;
+                break;
+            case 1:
+                num_ciu = 2;
+                break;}
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
+        Toast.makeText(this,"Elija una opcion",Toast.LENGTH_LONG).show();
     }
 }
