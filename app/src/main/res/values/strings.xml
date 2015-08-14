@@ -7,7 +7,7 @@
     <string name="title_activity_main2"> </string>
     <string name="title_activity_outfit"> </string>
 
-
+    //despues borrar este string
     <string name="genero">Genero</string>
 
     <string-array name="provincias">

@@ -11,6 +11,11 @@ public class outfitActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outfit);
+
+        //recibe el dato teoricamente
+        Bundle extras = getIntent().getExtras();
+        final String xgenero = extras.getString("gender");
+
     }
 
     @Override
