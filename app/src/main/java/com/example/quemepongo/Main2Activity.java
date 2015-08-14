@@ -5,14 +5,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
+
+    public Button btn_out = (Button) findViewById(R.id.btn_quemepongo);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
 
         Bundle extras = getIntent().getExtras();
 
@@ -24,7 +29,18 @@ public class Main2Activity extends AppCompatActivity {
 
         textView.setText(xgenero);
         textView2.setText(xciudad);
+        boton_quemepongo();
 
+    }
+
+    public void boton_quemepongo() {
+        btn_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), outfitActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

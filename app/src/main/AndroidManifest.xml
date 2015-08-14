@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.quemepongo.logo_screen"
+            android:name=".logo_screen"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,12 +17,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.quemepongo.mainActivity"
+            android:name=".mainActivity"
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name="com.example.quemepongo.Main2Activity"
+            android:name=".Main2Activity"
             android:label="@string/title_activity_main2" >
+        </activity>
+        <activity
+            android:name=".outfitActivity"
+            android:label="@string/title_activity_outfit" >
         </activity>
     </application>
 
