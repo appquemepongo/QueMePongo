@@ -26,12 +26,7 @@ public class Main2Activity extends AppCompatActivity {
         final String xgenero = extras.getString("gender");
         String xciudad = extras.getString("city");
 
-        //despues borrar estas 4 lineas son para mostrar las variables y en el layout
-        //borrar los 2 textviews
-        TextView textView = (TextView) findViewById(R.id.textView);
-        TextView textView2 = (TextView) findViewById(R.id.textView2);
-        textView.setText(xgenero);
-        textView2.setText(xciudad);
+
 
         quemepongo.setOnClickListener(new View.OnClickListener() {
             @Override

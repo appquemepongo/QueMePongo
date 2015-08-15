@@ -1,5 +1,6 @@
 package com.example.quemepongo;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
@@ -18,7 +19,10 @@ public class logo_screen extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logo_screen);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         empezaranimacion();
+
     }
 
     public void empezaranimacion()
