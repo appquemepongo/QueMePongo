@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/QueMePongo.iml" filepath="$PROJECT_DIR$/QueMePongo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AppQueMePongo.iml" filepath="$PROJECT_DIR$/AppQueMePongo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

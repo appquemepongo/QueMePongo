@@ -15,6 +15,88 @@
         android:layout_marginTop="30dp"
         android:src="@mipmap/clima" />
 
+    <TableLayout
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgClima"
+                android:src="@drawable/na"
+                android:layout_gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/txtCiudad"
+                android:id="@+id/txtCiudad"
+                android:layout_column="1" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/txtTemperatura"
+                android:id="@+id/txtTemperatura"
+                android:layout_column="0"
+                android:autoText="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/txtHumedad"
+                android:id="@+id/txtHumedad"
+                android:layout_column="1"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/txtViento"
+                android:id="@+id/txtViento"
+                android:layout_column="1"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/txtTipo"
+                android:id="@+id/txtTipo"
+                android:layout_column="1"
+                android:textAlignment="center" />
+        </TableRow>
+
+    </TableLayout>
+
     <ImageButton
         android:onClick="btn_quemepongo"
         android:layout_width="400dp"

@@ -10,6 +10,12 @@
     //despues borrar este string
     <string name="genero">Genero</string>
 
+    <string name="txtCiudad">Ciudad</string>
+    <string name="txtTemperatura">Temperatura</string>
+    <string name="txtHumedad">Humedad</string>
+    <string name="txtViento">Viento</string>
+    <string name="txtTipo">Tipo</string>
+
     <string-array name="provincias">
         <item>Córdoba</item>
         <item>Buenos Aires</item>
