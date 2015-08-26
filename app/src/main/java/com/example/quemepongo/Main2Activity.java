@@ -1,10 +1,12 @@
 package com.example.quemepongo;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,7 +49,7 @@ public class Main2Activity extends AppCompatActivity implements WeatherServiceCa
         dialogProgreso.setMessage("Cargando...");
         dialogProgreso.show();
 
-        servicio.refreshWeather("Austin, TX");
+        servicio.refreshWeather("Cordoba, AR");
 
         Bundle extras = getIntent().getExtras();
 
@@ -66,9 +68,27 @@ public class Main2Activity extends AppCompatActivity implements WeatherServiceCa
         });
     }
 
+    int cantidad = 0;
 
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            cantidad ++;
 
+            if (cantidad >= 2){
+
+                finish();
+            }
+            if (cantidad <2){
+                Toast.makeText(this,R.string.Salir, Toast.LENGTH_LONG).show();
+
+            }
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
 
 
     @Override
